@@ -1,7 +1,7 @@
 export default function CodeDisplay() {
   return (
     <div className="flex-1 px-2 sm:px-4 lg:px-6 max-w-7xl mx-auto py-4 sm:py-6 lg:py-8">
-      <div className="bg-slate-900 rounded-lg sm:rounded-xl shadow-2xl overflow-hidden border border-slate-700">
+      <div className="bg-slate-900 rounded-lg sm:rounded-xl shadow-2xl overflow-hidden shadow-black border border-slate-700">
         {/* Window Header */}
         <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-3 bg-slate-800/50 border-b border-slate-700">
           <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500" />
