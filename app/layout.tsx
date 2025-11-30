@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
-
-// Imports
-import Navbar from "./client/components/Navbar";
+import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 // Font
 const inter = Inter({
@@ -65,7 +64,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
 };
-// Separate viewport export (for themeColor, colorScheme, viewport)
+
 export const viewport = {
   width: "device-width",
   initialScale: 1,
@@ -84,10 +83,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
-        <header className="border-b dark:border-gray-800 border-gray-200">
-          <Navbar />
-        </header>
-        <main className="md:max-w-[70%] md:mx-auto p-3">{children}</main>
+        <ThemeProvider>
+          <header>
+            <Navbar />
+          </header>
+          <main>{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

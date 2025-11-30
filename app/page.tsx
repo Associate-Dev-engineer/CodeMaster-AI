@@ -1,9 +1,11 @@
-import HeroSection from "./client/components/Layouts/HeroSection";
+import HeroSection from "../components/Layouts/HeroSection";
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <main>
+        <HeroSection />
+      </main>
     </>
   );
 }
