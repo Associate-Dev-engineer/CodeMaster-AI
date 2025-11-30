@@ -208,6 +208,10 @@
   }
 }
 
+body::selection {
+  @apply bg-secondary;
+}
+
 /* Sponsers Animation */
 @keyframes marquee {
   0% {

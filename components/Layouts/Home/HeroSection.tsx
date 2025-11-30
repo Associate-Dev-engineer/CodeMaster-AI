@@ -1,19 +1,47 @@
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
+const avatars = [
+  {
+    id: 1,
+    src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+    alt: "User 1",
+  },
+  {
+    id: 2,
+    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+    alt: "User 2",
+  },
+  {
+    id: 3,
+    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+    alt: "User 3",
+  },
+  {
+    id: 4,
+    src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
+    alt: "User 4",
+  },
+  {
+    id: 5,
+    src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
+    alt: "User 5",
+  },
+];
 export default function HeroSection() {
   return (
-    <section className="w-full py-20 md:py-32 lg:py-40 overflow-hidden">
+    <section className="w-full py-16 md:py-32 lg:py-40 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-8">
           {/* Avatar Group */}
           <div className="flex -space-x-4 rtl:space-x-reverse">
-            {[...Array(5)].map((_, i) => (
+            {avatars.map((avatar) => (
               <img
-                key={i}
+                key={avatar.id}
                 className="w-10 h-10 border-2 border-border rounded-full object-cover"
-                src="https://images.unsplash.com/photo-1638803040283-7a5ffd48dad5?q=80&w=1974&auto=format&fit=crop"
-                alt={`User ${i + 1}`}
+                src={avatar.src}
+                alt={avatar.alt}
               />
             ))}
             <div className="flex items-center justify-center w-10 h-10 text-xs font-medium text-primary-foreground bg-secondary-foreground border-2 border-border rounded-full">
@@ -23,7 +51,8 @@ export default function HeroSection() {
 
           {/* Title */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight max-w-5xl">
-            AI Powered Coding <span className="text-primary">Platform</span>
+            Code Smarter, In Your Native
+            <span className="text-secondary-foreground px-2.5">Language</span>
           </h1>
 
           {/* Subtitle */}
@@ -36,13 +65,14 @@ export default function HeroSection() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto items-center pt-4">
-            <Button
-              className="w-full sm:w-auto cursor-pointer bg-secondary-foreground text-primary-foreground px-8 py-6 text-base sm:text-lg shadow-lg rounded-xl hover:bg-accent-foreground transition-all"
-              size="lg"
-            >
-              Get Started
-            </Button>
-
+            <Link href={"/Get-started"}>
+              <Button
+                className="w-full sm:w-auto cursor-pointer bg-secondary-foreground text-primary-foreground px-8 py-6 text-base sm:text-lg shadow-lg rounded-xl hover:bg-accent-foreground transition-all"
+                size="lg"
+              >
+                Get Started
+              </Button>
+            </Link>
             <Button
               className="w-full sm:w-auto bg-background border-2 border-border px-8 py-6 text-base sm:text-lg rounded-xl hover:bg-muted transition-all"
               size="lg"
@@ -72,8 +102,8 @@ export default function HeroSection() {
               <Image
                 src="https://framerusercontent.com/images/WQ7ocJThxH3qhnSivm9smtIkP0Q.png?scale-down-to=1024"
                 alt="Platform Preview"
-                width={1200}
-                height={1200}
+                width={2000}
+                height={2000}
                 className="rounded-xl shadow-2xl w-full h-auto"
               />
             </div>
