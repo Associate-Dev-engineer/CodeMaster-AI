@@ -1,3 +1,5 @@
+
+import Navbar from "@/components/Navbar";
 import CTASection from "@/components/Layouts/Home/CallToAction";
 import FAQSection from "@/components/Layouts/Home/FaqSection";
 import FeaturesSection from "@/components/Layouts/Home/FeaturesSection";
@@ -10,9 +12,13 @@ import TestimonialsSection from "@/components/Layouts/Home/Testimonials";
 import TrustedStats from "@/components/Layouts/Home/TrustedStats";
 import WhyChooseSection from "@/components/Layouts/Home/WhyChooseUs";
 
+
 export default function Home() {
   return (
     <>
+      <header>
+        <Navbar />
+      </header>
       <main>
         <HeroSection />
         <TrustedStats />

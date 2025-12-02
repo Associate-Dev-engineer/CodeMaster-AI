@@ -209,7 +209,7 @@
 }
 
 body::selection {
-  @apply bg-secondary;
+  @apply bg-primary text-primary-foreground;
 }
 
 /* Sponsers Animation */

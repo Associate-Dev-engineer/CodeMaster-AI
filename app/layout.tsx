@@ -83,10 +83,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
-        <ThemeProvider>
-          <header>
-            <Navbar />
-          </header>
+        <ThemeProvider enableColorScheme>
           <main>{children}</main>
         </ThemeProvider>
       </body>
